@@ -3,9 +3,9 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MethodologyComponent } from './examples/methodology/methodology.component';
-import { ServicesComponent } from './examples/services/services.component';
-import { LandingComponent } from './examples/landing/landing.component';
+import { MethodologyComponent } from './pages/methodology/methodology.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes =[
     { path: 'landing',              component: LandingComponent },

@@ -28,16 +28,20 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    // updated
+
     browsers: ['ChromeHeadless'],
-    // new
+    browserDisconnectTimeout: 10000,
+    browserDisconnectTolerance: 3,
+    browserNoActivityTimeout: 60000,
+
     customLaunchers: {
       'ChromeHeadless': {
         base: 'Chrome',
         flags: [
-          '--no-sandbox',
-          '--headless',
+          '--disable-web-security',
           '--disable-gpu',
+          '--headless',
+          '--no-sandbox',
           '--remote-debugging-port=9222',
           '--max_old_space_size=4096'
         ]

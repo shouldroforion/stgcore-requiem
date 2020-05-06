@@ -7,7 +7,7 @@
         <div class="container">
             <div class="motto">
                 <h1 class="title">Your business is not</h1>
-                <h1 class="title"><span class="font-weight-bold">Cloud Migration &amp; DevOps</span>.</h1>
+                <h1 class="title"><span class="font-weight-bold">Cloud Migration &amp; DevSecOps</span>.</h1>
                 <h1 class="title">Ours is.</h1>
                 <br />
             </div>
@@ -235,25 +235,33 @@
                 <div class="col-md-8 ml-auto mr-auto">
                     <a href="#keepintouch"></a>
                     <h2 class="title text-center">Keep in <span class="font-weight-bold">Touch?</span></h2>
-                    <form class="contact-form">
+
+                    <form class="contact-form" #contact="ngForm" (ngSubmit)="sendMessage(contact)">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Name</label>
-                                <input class="form-control" placeholder="Name">
+                                <input name="name" class="form-control" placeholder="Name" ngModel required #name="ngModel">
                             </div>
                             <div class="col-md-6">
                                 <label>Email</label>
-                                <input class="form-control" placeholder="Email">
+                                <input name="email" class="form-control" placeholder="Email" ngModel required #email="ngModel">
+                            </div>
+                        </div>
+                        <div class="row invisible d-none">
+                            <div class="col-md-12">
+                                <label>Expedite</label>
+                                <input name="expedite" class="form-control" placeholder="Expedite" ngModel #expedite="ngModel">
                             </div>
                         </div>
                         <label>Message</label>
-                        <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                        <textarea name="message" class="form-control" rows="4" placeholder="Tell us how we can help you..." ngModel required #message="ngModel"></textarea>
                         <div class="row">
                             <div class="col-md-4 offset-md-4">
-                                <button class="btn btn-info btn-lg btn-fill">Send Message</button>
+                                <button class="btn {{ sent ? 'btn-success' : 'btn-info' }} btn-lg btn-fill" [disabled]="sent">{{ sent ? 'Thank You!' : 'Send Message' }}</button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

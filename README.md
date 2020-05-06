@@ -1,4 +1,4 @@
-# CBG Requiem introduction
+# STG Requiem introduction
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
@@ -85,7 +85,7 @@ Using the production Dockerfile, build and tag the Docker image.
 ```zsh
 docker image build --no-cache -t shouldroforion/stgcore-requiem:prod-latest -f ./prod.dockerfile .
 docker tag shouldroforion/stgcore-requiem:prod-latest \
-    750444023825.dkr.ecr.us-west-2.amazonaws.com/shouldroforion/stgcore-requiem:prod-latest
+    XXXXXXXXXXX.dkr.ecr.us-west-2.amazonaws.com/shouldroforion/stgcore-requiem:prod-latest
 ```
 
 Get login command for Docker login.
@@ -102,7 +102,7 @@ aws ecr get-login --profile $profile \
 Push this image to the AWS ECR repository.
 
 ```zsh
-docker image push 750444023825.dkr.ecr.us-west-2.amazonaws.com/shouldroforion/stgcore-requiem:prod-latest
+docker image push XXXXXXXXXXX.dkr.ecr.us-west-2.amazonaws.com/shouldroforion/stgcore-requiem:prod-latest
 ```
 
 Spin up the PROD container using local image.
@@ -120,8 +120,8 @@ To force the service to update with newest image in repository. Note this assume
 ```zsh
 profile="stoic"
 region="us-west-2"
-cluster="CBGPillarOfAutumn-ECSCluster"
-service="CBGRequiem-LandingUIECSService"
+cluster="STGPillarOfAutumn-ECSCluster"
+service="STGRequiem-LandingUIECSService"
 
 aws ecs update-service --profile $profile \
     --region $region \

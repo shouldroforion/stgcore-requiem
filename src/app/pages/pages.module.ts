@@ -9,7 +9,7 @@ import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 
-import { ExamplesComponent } from './examples.component';
+import { PagesComponent } from './pages.component';
 import { MethodologyComponent } from './methodology/methodology.component';
 import { ServicesComponent } from './services/services.component';
 
@@ -30,10 +30,10 @@ import { LandingComponent } from './landing/landing.component';
         RouterModule
     ],
     declarations: [
-        ExamplesComponent,
+        PagesComponent,
         MethodologyComponent,
         ServicesComponent,
         LandingComponent
     ]
 })
-export class ExamplesModule { }
+export class PagesModule { }
